@@ -1,20 +1,11 @@
 {
-    "name": "TabOut",
-    "displayName": "TabOut",
+    "name": "tabout",
+    "displayName": "TabOut 2",
     "description": "Tab out of quotes, brackets, etc",
-    "version": "0.2.1",
-    "publisher": "albert",
+    "version": "0.2.2",
+    "publisher": "yfzhao",
     "engines": {
         "vscode": "^1.22.0"
-    },
-    "bugs": {
-        "url": "https://github.com/albertromkes/tabout/issues",
-        "email": "albert@rainology.nl"
-    },
-    "homepage": "https://github.com/albertromkes/tabout",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/albertromkes/tabout.git"
     },
     "icon": "images/Tab-Key.jpg",
     "categories": [
