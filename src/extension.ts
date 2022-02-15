@@ -1,4 +1,5 @@
 'use strict';
+
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
@@ -31,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
             return;
 
         if(!context.workspaceState.get('tabout-active') ){
-            commands.executeCommand("tab");
+             window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
             return;
         }
 
@@ -39,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
         let currentPositionInLine = editor.selection.active.character;
 
         if(currentPositionInLine == 0) {
-            commands.executeCommand("tab");
+            window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
             return;
         }
 
@@ -49,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
             var textBeforeCurrentPosition = editor.document.getText(rangeBeforeCurrentPosition);
             if(textBeforeCurrentPosition.trim() == "")
             {
-                commands.executeCommand("tab");
+                window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
                 return;
             }
         }

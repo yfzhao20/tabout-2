@@ -1,6 +1,7 @@
 import {CharacterSet} from './CharacterSet'
 import {characterSetsToTabOutFrom} from './charactersToTabOutFrom'
-import {window, Position, Selection, commands} from 'vscode';
+import {window, Position, Selection, commands, extensions} from 'vscode';
+
 
 export function returnHighest(num1:number, num2:number) : number
 {
@@ -70,5 +71,6 @@ export function selectNextCharacter(text:string, position:number)
         }
         
         //Default
-        commands.executeCommand("tab");
+        window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
+
 }
