@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
             return;
 
         if(!context.workspaceState.get('tabout-active') ){
-             window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
+             commands.executeCommand(window.activeTextEditor.document.languageId === 'markdown'&& vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
             return;
         }
 
@@ -40,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
         let currentPositionInLine = editor.selection.active.character;
 
         if(currentPositionInLine == 0) {
-            window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
+            commands.executeCommand(window.activeTextEditor.document.languageId === 'markdown'&& vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
             return;
         }
 
@@ -50,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
             var textBeforeCurrentPosition = editor.document.getText(rangeBeforeCurrentPosition);
             if(textBeforeCurrentPosition.trim() == "")
             {
-                window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
+                commands.executeCommand(window.activeTextEditor.document.languageId === 'markdown'&& vscode.extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
                 return;
             }
         }

@@ -71,6 +71,6 @@ export function selectNextCharacter(text:string, position:number)
         }
         
         //Default
-        window.activeTextEditor.document.languageId === 'markdown'&& commands.executeCommand(extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
+        commands.executeCommand(window.activeTextEditor.document.languageId === 'markdown'&& extensions.getExtension('yzhang.markdown-all-in-one') ? 'markdown.extension.onTabKey' : 'tab' );
 
 }
