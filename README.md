@@ -16,4 +16,3 @@ You can toggle the extension with the 'Toggle TabOut' command.
 
 <img src="https://raw.githubusercontent.com/albertromkes/tabout/master/images/tabout-command.gif">
 
-- fasdfasf
